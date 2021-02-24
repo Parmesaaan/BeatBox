@@ -5,8 +5,15 @@ public class GameHandler : MonoBehaviour
 {
     [Header("Handlers")]
     public LaneHandler laneHandler;
-    public ButtonHandler buttonHandler;
     public TextMeshProUGUI scoreText;
+
+    [Header("Buttons")]
+    public Button redButton;
+    public Button orangeButton;
+    public Button yellowButton;
+    public Button greenButton;
+    public Button blueButton;
+    public Button purpleButton;
 
     [Header("Controls")]
     public KeyCode red;
@@ -45,7 +52,17 @@ public class GameHandler : MonoBehaviour
             case Difficulty.Insane:
                 difficultyScale = 3f;
                 break;
+            case Difficulty.LiteralGod:
+                difficultyScale = 4f;
+                break;
         }
+
+        redButton.SetKey(red);
+        orangeButton.SetKey(orange);
+        yellowButton.SetKey(yellow);
+        greenButton.SetKey(green);
+        blueButton.SetKey(blue);
+        purpleButton.SetKey(purple);
     }
 
     void Update()
@@ -70,10 +87,25 @@ public class GameHandler : MonoBehaviour
         }
     }
 
-    public KeyCode[] GetKeyCodes()
+    public Button GetButton(GameHandler.Color color)
     {
-        KeyCode[] keyCodes = {red, orange, yellow, green, blue, purple};
-        return keyCodes;
+        switch(color)
+        {
+            case Color.Red:
+                return redButton;
+            case Color.Orange:
+                return orangeButton;
+            case Color.Yellow:
+                return yellowButton;
+            case Color.Green:
+                return greenButton;
+            case Color.Blue:
+                return blueButton;
+            case Color.Purple:
+                return purpleButton;
+            default:
+                return null;
+        }
     }
 
     public void AddPoints(float y)
@@ -91,7 +123,18 @@ public class GameHandler : MonoBehaviour
     {
         Normal,
         Hard,
-        Insane
+        Insane,
+        LiteralGod
+    }
+
+    public enum Color
+    {
+        Red,
+        Orange,
+        Yellow,
+        Green,
+        Blue,
+        Purple
     }
 
 }

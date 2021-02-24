@@ -2,14 +2,38 @@ using UnityEngine;
 
 public class Beat : MonoBehaviour
 {
-    public GameHandler gameHandler;
+    public GameHandler.Color color = GameHandler.Color.Red;
     public BeatType beatType = BeatType.Normal;
-    public bool pressable;
-    public Button button;
+    private bool pressable;
+    private Button button;
+    private GameHandler gameHandler;
 
-    void Start()
+void Start()
     {
         pressable = false;
+        gameHandler = FindObjectOfType<GameHandler>();
+
+        switch(color)
+        {
+            case GameHandler.Color.Red:
+                button = gameHandler.GetButton(GameHandler.Color.Red);
+                break;
+            case GameHandler.Color.Orange:
+                button = gameHandler.GetButton(GameHandler.Color.Orange);
+                break;
+            case GameHandler.Color.Yellow:
+                button = gameHandler.GetButton(GameHandler.Color.Yellow);
+                break;
+            case GameHandler.Color.Green:
+                button = gameHandler.GetButton(GameHandler.Color.Green);
+                break;
+            case GameHandler.Color.Blue:
+                button = gameHandler.GetButton(GameHandler.Color.Blue);
+                break;
+            case GameHandler.Color.Purple:
+                button = gameHandler.GetButton(GameHandler.Color.Purple);
+                break;
+        }
     }
 
     void Update()

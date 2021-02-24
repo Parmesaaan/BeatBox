@@ -663,6 +663,62 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &905292507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 905292509}
+  - component: {fileID: 905292508}
+  m_Layer: 0
+  m_Name: LevelGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &905292508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905292507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d7b63e9f6917d40b960b64e2cbea0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatMap: {fileID: 2800000, guid: 06d20c7a7221b9849ac9585733bf939b, type: 3}
+  redPrefab: {fileID: 2684152323651357408, guid: 0c704ae1e0481ed4a93d6b61a80b3fe8, type: 3}
+  orangePrefab: {fileID: 695857688179704542, guid: db4e8239f4882444aae83c61c144be76, type: 3}
+  yellowPrefab: {fileID: 7977825039481906125, guid: d4d873e378cfd9c409ab79517ed2b50a, type: 3}
+  greenPrefab: {fileID: 1501793876148810107, guid: 39cca39fe11bdea42b0ddbfa69ed9eed, type: 3}
+  bluePrefab: {fileID: 4740689021160949610, guid: 897bf9cab85700847890aa16df77a328, type: 3}
+  purplePrefab: {fileID: 5289424739796027536, guid: fd3a8d71984ad764aa56aa02d1fb14cc, type: 3}
+  redLane: {fileID: 1519495430}
+  orangeLane: {fileID: 1224800169}
+  yellowLane: {fileID: 1991286003}
+  greenLane: {fileID: 1724632839}
+  blueLane: {fileID: 1682862887}
+  purpleLane: {fileID: 1504833885}
+--- !u!4 &905292509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905292507}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &921127959
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +825,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1205492658}
-  - component: {fileID: 1205492657}
   m_Layer: 0
   m_Name: Buttons
   m_TagString: Untagged
@@ -777,26 +832,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1205492657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205492656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb8d8b8f596979468ff8b8819170199, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameHandler: {fileID: 2027733805}
-  buttons:
-  - {fileID: 244671038}
-  - {fileID: 1498244184}
-  - {fileID: 392260825}
-  - {fileID: 331328313}
-  - {fileID: 921127959}
-  - {fileID: 1617194712}
 --- !u!4 &1205492658
 Transform:
   m_ObjectHideFlags: 0
@@ -1492,8 +1527,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laneHandler: {fileID: 1712866335}
-  buttonHandler: {fileID: 1205492657}
   scoreText: {fileID: 1647737558}
+  redButton: {fileID: 244671043}
+  orangeButton: {fileID: 1498244189}
+  yellowButton: {fileID: 392260830}
+  greenButton: {fileID: 331328318}
+  blueButton: {fileID: 921127964}
+  purpleButton: {fileID: 1617194715}
   red: 113
   orange: 119
   yellow: 101
@@ -1502,7 +1542,7 @@ MonoBehaviour:
   purple: 112
   song: {fileID: 2027733808}
   countInSound: {fileID: 2027733807}
-  difficulty: 2
+  difficulty: 1
   bpm: 174
 --- !u!4 &2027733806
 Transform:
