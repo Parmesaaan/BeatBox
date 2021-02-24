@@ -1,10 +1,12 @@
 using UnityEngine;
+using TMPro;
 
 public class GameHandler : MonoBehaviour
 {
     [Header("Handlers")]
     public LaneHandler laneHandler;
     public ButtonHandler buttonHandler;
+    public TextMeshProUGUI scoreText;
 
     [Header("Controls")]
     public KeyCode red;
@@ -16,15 +18,21 @@ public class GameHandler : MonoBehaviour
 
     [Header("Game")]
     public AudioSource song;
+    public AudioSource countInSound;
     public Difficulty difficulty = Difficulty.Normal;
     public float bpm;
+
 
     private float bps;
     private bool started;
     private float difficultyScale;
+    private int score;
+    private int scoreOld;
 
     void Start()
     {
+        score = 0;
+        scoreOld = 0;
         bps = bpm / 60f;
         switch (difficulty)
         {
@@ -46,6 +54,10 @@ public class GameHandler : MonoBehaviour
         if (started)
         {
             laneHandler.MoveBeats(new Vector3(0f, bps * Time.deltaTime * difficultyScale, 0f));
+            if(!(score == scoreOld))
+            {
+                UpdateScore();
+            }
         }
         else
         {
@@ -64,10 +76,22 @@ public class GameHandler : MonoBehaviour
         return keyCodes;
     }
 
+    public void AddPoints(float y)
+    {
+        score += (int) ((2f - Mathf.Abs(y)) * 100);
+    }
+
+    private void UpdateScore()
+    {
+        scoreText.SetText("Score: " + score);
+        scoreOld = score;
+    }
+
     public enum Difficulty
     {
         Normal,
         Hard,
         Insane
     }
+
 }
