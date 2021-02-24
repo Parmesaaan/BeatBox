@@ -15,12 +15,12 @@ public class GameHandler : MonoBehaviour
     public KeyCode purple;
 
     [Header("Game")]
-    public Difficulty difficulty = Difficulty.Normal;
     public AudioSource song;
+    public Difficulty difficulty = Difficulty.Normal;
     public float bpm;
 
-    private bool started;
     private float bps;
+    private bool started;
     private float difficultyScale;
 
     void Start()
@@ -42,6 +42,7 @@ public class GameHandler : MonoBehaviour
 
     void Update()
     {
+
         if (started)
         {
             laneHandler.MoveBeats(new Vector3(0f, bps * Time.deltaTime * difficultyScale, 0f));
