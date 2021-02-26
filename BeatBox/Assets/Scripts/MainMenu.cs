@@ -11,6 +11,6 @@ public class MainMenu : MonoBehaviour
 
     public void OpenLink()
     {
-        Application.OpenURL("github.com/Parmesaaan/beatbox/");
+        Application.ExternalEval("window.open(\"http://github.com/Parmesaaan/beatbox\")");
     }
 }
