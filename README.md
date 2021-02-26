@@ -1,5 +1,6 @@
 # BeatBox
 BeatBox is a Rhythm game inspired by Osu! Mania and Beatmania. This game was created for a university project.
+You can play it here: https://parmesaaan.github.io/beatbox/
 
 # Completed
 * Buttons and beats that respond to each other
@@ -7,6 +8,7 @@ BeatBox is a Rhythm game inspired by Osu! Mania and Beatmania. This game was cre
 * Basic scoring system
 * Difficulties (backend)
 * Level builder (backend)
+* One song
 
 # To-do
 * Menu screen
@@ -16,6 +18,7 @@ BeatBox is a Rhythm game inspired by Osu! Mania and Beatmania. This game was cre
 * End screen after song (score, hiscores, highest combo)
 * Audio effects (count-in, hooray.mp3, menu song)
 * Health bar (or some mechanic to stop button mashing)
+* More songs
 
 # Might do
 * Beat sync backgrounds
