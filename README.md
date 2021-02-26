@@ -14,8 +14,6 @@ You can play it here: https://parmesaaan.github.io/beatbox/
 # To-do
 * Controls screen (with difficulty selection, volume and latency sliders etc)
 * More advanced note syncing
-* Menu screen
-* Controls screen (with difficulty selection, Latency slider)
 * Scene graphics rehaul (score, hit confirmation, buttons and beats, song backgrounds)
 * More advanced score system (multipliers, combos)
 * End screen after song (score, hiscores, highest combo)
