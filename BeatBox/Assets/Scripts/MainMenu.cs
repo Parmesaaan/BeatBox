@@ -8,4 +8,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Game");
 
     }
+
+    public void OpenLink()
+    {
+        Application.OpenURL("github.com/Parmesaaan/beatbox/");
+    }
 }
