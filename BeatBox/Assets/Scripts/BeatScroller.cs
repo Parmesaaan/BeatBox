@@ -6,16 +6,25 @@ public class BeatScroller : MonoBehaviour
     private Vector3 move;
     private float difficultyScale;
 
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
+
     void Update()
     {
         if (started)
         {
             transform.position -= move;
+        } else
+        {
+            
         }
     }
 
     public void Begin(Vector3 move)
     {
+        gameObject.SetActive(true);
         started = true;
         this.move = move * difficultyScale;
     }
