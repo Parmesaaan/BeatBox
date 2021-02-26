@@ -30,4 +30,12 @@ public class LaneHandler : MonoBehaviour
             lane.GetComponent<BeatScroller>().AdjustDifficulty(difficultyScale);
         }
     }
+
+    public void Reset()
+    {
+        foreach (GameObject lane in lanes)
+        {
+            lane.GetComponent<BeatScroller>().Reset();
+        }
+    }
 }

@@ -41,6 +41,7 @@ public class GameHandler : MonoBehaviour
         score = 0;
         scoreOld = 0;
         bps = bpm / 60f;
+
         switch (difficulty)
         {
             case Difficulty.Normal:
@@ -80,9 +81,10 @@ public class GameHandler : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
+                started = true;
                 song.PlayDelayed(bps);
                 laneHandler.AdjustDifficulty(difficultyScale);
-                started = true;
+                
             }
         }
     }
@@ -111,6 +113,13 @@ public class GameHandler : MonoBehaviour
     public void AddPoints(float y)
     {
         score += (int) ((2f - Mathf.Abs(y)) * 100);
+    }
+
+    public void Reset()
+    {
+        song.Stop();
+        started = false;
+        laneHandler.Reset();
     }
 
     private void UpdateScore()

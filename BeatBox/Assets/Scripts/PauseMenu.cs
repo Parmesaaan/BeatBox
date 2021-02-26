@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
     public AudioSource audioSource;
+    public GameHandler gameHandler;
 
     void Update()
     {
@@ -25,7 +26,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        audioSource.Play();
+        audioSource.UnPause();
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -41,5 +42,8 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 1f;
+        gameHandler.Reset();
+        GameIsPaused = false;
     }
 }

@@ -5,9 +5,11 @@ public class BeatScroller : MonoBehaviour
     private bool started;
     private Vector3 move;
     private float difficultyScale;
+    private Vector3 initialPosition;
 
     private void Start()
     {
+        initialPosition = gameObject.transform.position;
         gameObject.SetActive(false);
     }
 
@@ -37,5 +39,13 @@ public class BeatScroller : MonoBehaviour
             float offset = Mathf.Sqrt(difficultyScale);
             transform.position = new Vector3(transform.position.x, transform.position.y * (difficultyScale * difficultyScale), transform.position.z);
         }
+    }
+
+    public void Reset()
+    {
+        started = false;
+        gameObject.SetActive(true);
+        gameObject.transform.position.Set(initialPosition.x, initialPosition.y, initialPosition.z);
+        gameObject.SetActive(false);
     }
 }
