@@ -694,6 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatMaps:
   - {fileID: 2800000, guid: 5040d53d7264116478b59ab73a1edda5, type: 3}
+  - {fileID: 2800000, guid: 1c294e9a6f018d34cb5e2bb092fc934d, type: 3}
   redPrefab: {fileID: 2684152323651357408, guid: 0c704ae1e0481ed4a93d6b61a80b3fe8, type: 3}
   orangePrefab: {fileID: 695857688179704542, guid: db4e8239f4882444aae83c61c144be76, type: 3}
   yellowPrefab: {fileID: 7977825039481906125, guid: d4d873e378cfd9c409ab79517ed2b50a, type: 3}

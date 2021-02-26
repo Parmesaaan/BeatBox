@@ -53,22 +53,22 @@ public class LevelGenerator : MonoBehaviour
         switch (y)
         {
             case 5:
-                Instantiate(redPrefab, new Vector2(redLane.transform.position.x, ((float) x / 4f) + ((float) 2048 * beatMapIndex) + 9f), Quaternion.identity, redLane);
+                Instantiate(redPrefab, new Vector2(redLane.transform.position.x, ((float) x / 4f) + ((float) 512 * beatMapIndex) + 9f), Quaternion.identity, redLane);
                 break;
             case 4:
-                Instantiate(orangePrefab, new Vector2(orangeLane.transform.position.x, ((float) x / 4f) + ((float) 2048 * beatMapIndex) + 9f), Quaternion.identity, orangeLane);
+                Instantiate(orangePrefab, new Vector2(orangeLane.transform.position.x, ((float) x / 4f) + ((float) 512 * beatMapIndex) + 9f), Quaternion.identity, orangeLane);
                 break;
             case 3:
-                Instantiate(yellowPrefab, new Vector2(yellowLane.transform.position.x, ((float) x / 4f) + ((float) 2048 * beatMapIndex) + 9f), Quaternion.identity, yellowLane);
+                Instantiate(yellowPrefab, new Vector2(yellowLane.transform.position.x, ((float) x / 4f) + ((float) 512 * beatMapIndex) + 9f), Quaternion.identity, yellowLane);
                 break;
             case 2:
-                Instantiate(greenPrefab, new Vector2(greenLane.transform.position.x, ((float) x / 4f) + ((float) 2048 * beatMapIndex) + 9f), Quaternion.identity, greenLane);
+                Instantiate(greenPrefab, new Vector2(greenLane.transform.position.x, ((float) x / 4f) + ((float) 512 * beatMapIndex) + 9f), Quaternion.identity, greenLane);
                 break;
             case 1:
-                Instantiate(bluePrefab, new Vector2(blueLane.transform.position.x, ((float) x / 4f) + ((float) 2048 * beatMapIndex) + 9f), Quaternion.identity, blueLane);
+                Instantiate(bluePrefab, new Vector2(blueLane.transform.position.x, ((float) x / 4f) + ((float) 512 * beatMapIndex) + 9f), Quaternion.identity, blueLane);
                 break;
             case 0:
-                Instantiate(purplePrefab, new Vector2(purpleLane.transform.position.x, ((float) x / 4f) + ((float) 2048 * beatMapIndex) + 9f), Quaternion.identity, purpleLane);
+                Instantiate(purplePrefab, new Vector2(purpleLane.transform.position.x, ((float) x / 4f) + ((float) 512 * beatMapIndex) + 9f), Quaternion.identity, purpleLane);
                 break;
         }
     }
