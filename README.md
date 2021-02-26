@@ -11,6 +11,7 @@ You can play it here: https://parmesaaan.github.io/beatbox/
 * One song
 
 # To-do
+* More advanced note syncing
 * Menu screen
 * Controls screen (with difficulty selection, Latency slider)
 * Scene graphics rehaul (score, hit confirmation, buttons and beats, song backgrounds)
