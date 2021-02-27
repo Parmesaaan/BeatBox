@@ -28,7 +28,7 @@ public class GameHandler : MonoBehaviour
     public AudioSource countInSound;
     public Difficulty difficulty = Difficulty.Normal;
     public float bpm;
-
+    public float latencyModifier = 0.75f;
 
     private float bps;
     private bool started;
@@ -36,8 +36,12 @@ public class GameHandler : MonoBehaviour
     private int score;
     private int scoreOld;
 
+    public bool isPaused;
+    public bool songStarted;
+
     void Start()
     {
+        songStarted = false;
         score = 0;
         scoreOld = 0;
         bps = bpm / 60f;
@@ -58,6 +62,9 @@ public class GameHandler : MonoBehaviour
                 break;
         }
 
+        laneHandler.AdjustDifficulty(difficultyScale);
+        song.clip.LoadAudioData();
+
         redButton.SetKey(red);
         orangeButton.SetKey(orange);
         yellowButton.SetKey(yellow);
@@ -76,14 +83,20 @@ public class GameHandler : MonoBehaviour
             {
                 UpdateScore();
             }
+            if(songStarted)
+            {
+                if(!(song.isPlaying) && !(isPaused))
+                {
+                    song.Play();
+                }
+            }
         }
         else
         {
             if (Input.anyKeyDown)
             {
                 started = true;
-                song.PlayDelayed(bps);
-                laneHandler.AdjustDifficulty(difficultyScale);
+                //song.PlayDelayed(bps);
                 
             }
         }

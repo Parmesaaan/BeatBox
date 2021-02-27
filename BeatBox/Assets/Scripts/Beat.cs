@@ -38,6 +38,15 @@ void Start()
 
     void Update()
     {
+        float gameStartOffset = ((float) gameHandler.bpm / 60f) * gameHandler.latencyModifier;
+        if(gameObject.transform.position.y <= gameStartOffset)
+        {
+            if (!gameHandler.songStarted)
+            {
+                gameHandler.songStarted = true;
+            }
+        }
+
         if(gameObject.transform.position.y <= 1.5f)
         {
             pressable = true;
