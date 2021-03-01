@@ -25,22 +25,33 @@ public class GameHandler : MonoBehaviour
 
     [Header("Game")]
     public AudioSource song;
-    public AudioSource countInSound;
-    public Difficulty difficulty = Difficulty.Normal;
+    public Difficulty difficulty = Difficulty.Easy;
     public float bpm;
     public float latencyModifier = 0.75f;
 
+    private GameInfo gameInfo;
     private float bps;
     private bool started;
     private float difficultyScale;
     private int score;
     private int scoreOld;
 
+    public TextMeshProUGUI pressAnyKey;
     public bool isPaused;
     public bool songStarted;
+    private bool setup;
 
     void Start()
     {
+        this.gameInfo = FindObjectOfType<GameInfo>();
+        if(gameInfo)
+        {
+            song.clip = gameInfo.GetMusic();
+            bpm = gameInfo.GetBPM();
+            difficulty = gameInfo.GetDifficulty();
+            latencyModifier = gameInfo.GetLatencyModifier();
+        }
+
         songStarted = false;
         score = 0;
         scoreOld = 0;
@@ -48,29 +59,39 @@ public class GameHandler : MonoBehaviour
 
         switch (difficulty)
         {
-            case Difficulty.Normal:
+            case Difficulty.Easy:
                 difficultyScale = 1f;
                 break;
-            case Difficulty.Hard:
+            case Difficulty.Normal:
                 difficultyScale = 2f;
                 break;
-            case Difficulty.Insane:
+            case Difficulty.Hard:
                 difficultyScale = 3f;
-                break;
-            case Difficulty.LiteralGod:
-                difficultyScale = 4f;
                 break;
         }
 
         laneHandler.AdjustDifficulty(difficultyScale);
         song.clip.LoadAudioData();
 
-        redButton.SetKey(red);
-        orangeButton.SetKey(orange);
-        yellowButton.SetKey(yellow);
-        greenButton.SetKey(green);
-        blueButton.SetKey(blue);
-        purpleButton.SetKey(purple);
+        if(gameInfo)
+        {
+            redButton.SetKey(gameInfo.GetButtonKeys()[0]);
+            orangeButton.SetKey(gameInfo.GetButtonKeys()[1]);
+            yellowButton.SetKey(gameInfo.GetButtonKeys()[2]);
+            greenButton.SetKey(gameInfo.GetButtonKeys()[3]);
+            blueButton.SetKey(gameInfo.GetButtonKeys()[4]);
+            purpleButton.SetKey(gameInfo.GetButtonKeys()[5]);
+        } else
+        {
+            redButton.SetKey(red);
+            orangeButton.SetKey(orange);
+            yellowButton.SetKey(yellow);
+            greenButton.SetKey(green);
+            blueButton.SetKey(blue);
+            purpleButton.SetKey(purple);
+        }
+
+        setup = true;
     }
 
     void Update()
@@ -93,8 +114,14 @@ public class GameHandler : MonoBehaviour
         }
         else
         {
+            if(!setup)
+            {
+                Start();
+                setup = true;
+            }
             if (Input.anyKeyDown)
             {
+                pressAnyKey.gameObject.SetActive(false);
                 started = true;
                 //song.PlayDelayed(bps);
                 
@@ -132,6 +159,7 @@ public class GameHandler : MonoBehaviour
     {
         song.Stop();
         started = false;
+        setup = false;
         laneHandler.Reset();
     }
 
@@ -143,10 +171,9 @@ public class GameHandler : MonoBehaviour
 
     public enum Difficulty
     {
+        Easy,
         Normal,
-        Hard,
-        Insane,
-        LiteralGod
+        Hard
     }
 
     public enum Color

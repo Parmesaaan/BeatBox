@@ -43,6 +43,13 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        //GameInfo gameInfo = FindObjectOfType<GameInfo>();
+        //GameObject gameInfoParent = gameInfo.gameObject;
+        //if(gameInfo)
+        //{
+        //    Destroy(gameInfo);
+        //    Destroy(gameInfoParent);
+        //}
         SceneManager.LoadScene("Menu");
         Time.timeScale = 1f;
         gameHandler.isPaused = false;

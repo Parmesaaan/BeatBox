@@ -20,8 +20,15 @@ public class LevelGenerator : MonoBehaviour
     public Transform blueLane;
     public Transform purpleLane;
 
+    private GameInfo gameInfo;
+
     private void Start()
     {
+        this.gameInfo = FindObjectOfType<GameInfo>();
+        if(gameInfo)
+        {
+            this.beatMaps = gameInfo.GetBeatMaps();
+        }
         GenerateLevel();
     }
 

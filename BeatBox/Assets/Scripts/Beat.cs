@@ -38,7 +38,7 @@ void Start()
 
     void Update()
     {
-        float gameStartOffset = ((float) gameHandler.bpm / 60f) * gameHandler.latencyModifier;
+        float gameStartOffset = ((float)gameHandler.bpm / 60f) * gameHandler.latencyModifier + difficultyAdjust(gameHandler.difficulty);
         if(gameObject.transform.position.y <= gameStartOffset)
         {
             if (!gameHandler.songStarted)
@@ -66,6 +66,21 @@ void Start()
         if (gameObject.transform.position.y <= -2f)
         {
             gameObject.SetActive(false);
+        }
+    }
+
+    private float difficultyAdjust(GameHandler.Difficulty difficulty)
+    {
+        switch (difficulty)
+        {
+            case GameHandler.Difficulty.Easy:
+                return -1f;
+            case GameHandler.Difficulty.Normal:
+                return 0f;
+            case GameHandler.Difficulty.Hard:
+                return 2.5f;
+            default:
+                return 0f;
         }
     }
 
