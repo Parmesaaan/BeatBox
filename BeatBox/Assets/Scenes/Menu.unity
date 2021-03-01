@@ -550,7 +550,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: P
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1284,7 +1284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &159762055
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1413,7 +1413,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: O
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2173,7 +2173,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2227,6 +2227,7 @@ GameObject:
   - component: {fileID: 495393748}
   - component: {fileID: 495393747}
   - component: {fileID: 495393746}
+  - component: {fileID: 495393749}
   m_Layer: 5
   m_Name: OrangeControl
   m_TagString: Untagged
@@ -2298,7 +2299,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 495393747}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 495393749}
+        m_TargetAssemblyTypeName: ButtonKeybind, Assembly-CSharp
+        m_MethodName: SetIsChanging
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &495393747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2337,6 +2350,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495393744}
   m_CullTransparentMesh: 1
+--- !u!114 &495393749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495393744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de5b9c0a92a4cd49ba4589d44d10fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1474866546}
+  buttonIndex: 1
+  isChanging: 0
 --- !u!1 &515879484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2435,7 +2463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Q
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2524,6 +2552,7 @@ GameObject:
   - component: {fileID: 555512628}
   - component: {fileID: 555512627}
   - component: {fileID: 555512626}
+  - component: {fileID: 555512629}
   m_Layer: 5
   m_Name: PurpleControl
   m_TagString: Untagged
@@ -2595,7 +2624,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 555512627}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 555512629}
+        m_TargetAssemblyTypeName: ButtonKeybind, Assembly-CSharp
+        m_MethodName: SetIsChanging
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &555512627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2634,6 +2675,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555512624}
   m_CullTransparentMesh: 1
+--- !u!114 &555512629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555512624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de5b9c0a92a4cd49ba4589d44d10fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 56159286}
+  buttonIndex: 5
+  isChanging: 0
 --- !u!1 &580188414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,7 +2705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &580188415
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2916,6 +2972,7 @@ GameObject:
   - component: {fileID: 630934133}
   - component: {fileID: 630934132}
   - component: {fileID: 630934131}
+  - component: {fileID: 630934134}
   m_Layer: 5
   m_Name: BlueControl
   m_TagString: Untagged
@@ -2987,7 +3044,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 630934132}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 630934134}
+        m_TargetAssemblyTypeName: ButtonKeybind, Assembly-CSharp
+        m_MethodName: SetIsChanging
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &630934132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3026,6 +3095,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630934129}
   m_CullTransparentMesh: 1
+--- !u!114 &630934134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630934129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de5b9c0a92a4cd49ba4589d44d10fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 195156119}
+  buttonIndex: 4
+  isChanging: 0
 --- !u!1 &653943568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3216,7 +3300,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4039,7 +4123,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: E
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4467,8 +4551,8 @@ RectTransform:
   m_Father: {fileID: 1257247227}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 25, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5642,8 +5726,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36.75, y: -77.22499}
-  m_SizeDelta: {x: 377.21997, y: 36.29248}
+  m_AnchoredPosition: {x: -17.0519, y: -77.22499}
+  m_SizeDelta: {x: 416.6162, y: 36.2925}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1285045270
 MonoBehaviour:
@@ -5665,7 +5749,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CONTROLS (NYI)
+  m_text: CONTROLS (CLICK AND PRESS)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6180,8 +6264,8 @@ RectTransform:
   m_Father: {fileID: 1869228083}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.2202828}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6280,7 +6364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: W
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6634,8 +6718,8 @@ RectTransform:
   m_Father: {fileID: 373892158}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 25, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6943,7 +7027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7375,6 +7459,7 @@ GameObject:
   - component: {fileID: 1659162608}
   - component: {fileID: 1659162607}
   - component: {fileID: 1659162606}
+  - component: {fileID: 1659162609}
   m_Layer: 5
   m_Name: YellowControl
   m_TagString: Untagged
@@ -7446,7 +7531,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1659162607}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1659162609}
+        m_TargetAssemblyTypeName: ButtonKeybind, Assembly-CSharp
+        m_MethodName: SetIsChanging
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1659162607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7485,6 +7582,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659162604}
   m_CullTransparentMesh: 1
+--- !u!114 &1659162609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659162604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de5b9c0a92a4cd49ba4589d44d10fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1019098469}
+  buttonIndex: 2
+  isChanging: 0
 --- !u!1 &1670165548
 GameObject:
   m_ObjectHideFlags: 0
@@ -8218,8 +8330,8 @@ RectTransform:
   m_Father: {fileID: 785192536}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 25, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8471,6 +8583,7 @@ GameObject:
   - component: {fileID: 1863142814}
   - component: {fileID: 1863142813}
   - component: {fileID: 1863142812}
+  - component: {fileID: 1863142815}
   m_Layer: 5
   m_Name: RedControl
   m_TagString: Untagged
@@ -8542,7 +8655,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1863142813}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1863142815}
+        m_TargetAssemblyTypeName: ButtonKeybind, Assembly-CSharp
+        m_MethodName: SetIsChanging
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1863142813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8581,6 +8706,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863142810}
   m_CullTransparentMesh: 1
+--- !u!114 &1863142815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863142810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de5b9c0a92a4cd49ba4589d44d10fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 551048172}
+  buttonIndex: 0
+  isChanging: 0
 --- !u!1 &1869228082
 GameObject:
   m_ObjectHideFlags: 0
@@ -9173,9 +9313,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2015941658
 MonoBehaviour:
@@ -9366,6 +9506,7 @@ GameObject:
   - component: {fileID: 2067645344}
   - component: {fileID: 2067645343}
   - component: {fileID: 2067645342}
+  - component: {fileID: 2067645345}
   m_Layer: 5
   m_Name: GreenControl
   m_TagString: Untagged
@@ -9437,7 +9578,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2067645343}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2067645345}
+        m_TargetAssemblyTypeName: ButtonKeybind, Assembly-CSharp
+        m_MethodName: SetIsChanging
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &2067645343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9476,6 +9629,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067645340}
   m_CullTransparentMesh: 1
+--- !u!114 &2067645345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067645340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de5b9c0a92a4cd49ba4589d44d10fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1551225325}
+  buttonIndex: 3
+  isChanging: 0
 --- !u!1 &2089842611
 GameObject:
   m_ObjectHideFlags: 0
@@ -9509,7 +9677,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
