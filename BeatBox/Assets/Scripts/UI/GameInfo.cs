@@ -9,7 +9,10 @@ public class GameInfo : MonoBehaviour
     public Texture2D[] beatMaps;
     public float bpm;
     public GameHandler.Difficulty difficulty;
-    public float latencyModifier;
+    public float fixedLatencyModifier;
+    public float publicLatencyModifier = 0.0f;
+    public float finalLatencyModifier;
+    public Sprite backgroundImage;
     public KeyCode[] buttonKeys;
 
     private bool hasCustomControls;
@@ -71,7 +74,19 @@ public class GameInfo : MonoBehaviour
 
     public void SetLatencyModifier(float latencyModifier)
     {
-        this.latencyModifier = latencyModifier;
+        this.fixedLatencyModifier = latencyModifier;
+        this.finalLatencyModifier = this.fixedLatencyModifier + this.publicLatencyModifier;
+    }
+
+    public void SetPublicLatencyModifier(float latencyModifier)
+    {
+        this.publicLatencyModifier = latencyModifier/100f;
+        this.finalLatencyModifier = this.fixedLatencyModifier + this.publicLatencyModifier;
+    }
+
+    public void SetBackgroundImage(Sprite backgroundImage)
+    {
+        this.backgroundImage = backgroundImage;
     }
 
     public void SetButtonKey(int keyIndex, KeyCode keyCode)
@@ -107,7 +122,12 @@ public class GameInfo : MonoBehaviour
 
     public float GetLatencyModifier()
     {
-        return latencyModifier;
+        return finalLatencyModifier;
+    }
+
+    public Sprite GetBackgroundImage()
+    {
+        return this.backgroundImage;
     }
 
     public KeyCode[] GetButtonKeys()

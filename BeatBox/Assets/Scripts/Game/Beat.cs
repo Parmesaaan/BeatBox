@@ -59,12 +59,14 @@ void Start()
 
         if (pressable && button.isPressed())
         {
-            gameHandler.AddPoints(gameObject.transform.position.y);
+            int points = (int)((2f - Mathf.Abs(transform.position.y)) * 10);
+            gameHandler.HitNote(points);
             gameObject.SetActive(false);
         }
 
         if (gameObject.transform.position.y <= -2f)
         {
+            gameHandler.MissedNote();
             gameObject.SetActive(false);
         }
     }

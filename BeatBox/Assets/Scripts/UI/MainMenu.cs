@@ -25,11 +25,17 @@ public class MainMenu : MonoBehaviour
 
     public void SetVolumeMusic(float volume)
     {
-        audioMixer.SetFloat("MusicVolumeParam", volume * 2f);
+        audioMixer.SetFloat("MusicVolumeParam", Mathf.Log10(volume) * 20f);
     }
 
     public void SetVolumeUI(float volume)
     {
-        audioMixer.SetFloat("UIVolumeParam", volume * 2f);
+        audioMixer.SetFloat("UIVolumeParam", Mathf.Log10(volume) * 20f);
+    }
+
+    public void SetLatencyModifier(float latencyModifier)
+    {
+        GameInfo gameInfo = FindObjectOfType<GameInfo>();
+        gameInfo.SetPublicLatencyModifier(latencyModifier);
     }
 }

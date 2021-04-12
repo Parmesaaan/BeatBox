@@ -1,11 +1,13 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameHandler : MonoBehaviour
 {
     [Header("Handlers")]
     public LaneHandler laneHandler;
     public TextMeshProUGUI scoreText;
+    public Image backgroundImage;
 
     [Header("Buttons")]
     public Button redButton;
@@ -33,8 +35,14 @@ public class GameHandler : MonoBehaviour
     private float bps;
     private bool started;
     private float difficultyScale;
+
     private int score;
     private int scoreOld;
+    private int notesHit = 0;
+    private int notesMissed = 0;
+    private int combo = 0;
+    private int multiplier = 1;
+    private float lastNoteTime;
 
     public TextMeshProUGUI pressAnyKey;
     public bool isPaused;
@@ -50,6 +58,7 @@ public class GameHandler : MonoBehaviour
             bpm = gameInfo.GetBPM();
             difficulty = gameInfo.GetDifficulty();
             latencyModifier = gameInfo.GetLatencyModifier();
+            backgroundImage.sprite = gameInfo.GetBackgroundImage();
         }
 
         songStarted = false;
@@ -100,7 +109,7 @@ public class GameHandler : MonoBehaviour
         if (started)
         {
             laneHandler.MoveBeats(new Vector3(0f, bps * Time.deltaTime * difficultyScale, 0f));
-            if(!(score == scoreOld))
+            if(!(score == scoreOld) || combo == 0)
             {
                 UpdateScore();
             }
@@ -150,9 +159,40 @@ public class GameHandler : MonoBehaviour
         }
     }
 
-    public void AddPoints(float y)
+    public void HitNote(int points)
     {
-        score += (int) ((2f - Mathf.Abs(y)) * 100);
+        if(Time.time - lastNoteTime <= 0.08f)
+        {
+            score += (points * multiplier) / 3;
+            return;
+        }
+        notesHit++;
+        combo++;
+        if(combo >= 25 && combo < 50)
+        {
+            multiplier = 2;
+        }
+        else if(combo >= 50 && combo < 75)
+        {
+            multiplier = 3;
+        }
+        else if (combo >= 75 && combo < 100)
+        {
+            multiplier = 4;
+        }
+        else if (combo >= 100)
+        {
+            multiplier = 5;
+        }
+        score += points * multiplier;
+        lastNoteTime = Time.time;
+    }
+
+    public void MissedNote()
+    {
+        combo = 0;
+        multiplier = 1;
+        notesMissed++;
     }
 
     public void Reset()
@@ -165,7 +205,7 @@ public class GameHandler : MonoBehaviour
 
     private void UpdateScore()
     {
-        scoreText.SetText("Score: " + score);
+        scoreText.SetText("Score: " + score + "\nCombo: " + combo + "\nMultiplier: " + multiplier + "x");
         scoreOld = score;
     }
 
