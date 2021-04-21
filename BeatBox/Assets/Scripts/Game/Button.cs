@@ -5,12 +5,14 @@ public class Button : MonoBehaviour
     public Sprite defaultImage;
     public Sprite pressedImage;
 
+    private GameHandler gameHandler;
     private SpriteRenderer sr;
     private KeyCode key;
     private bool pressed;
 
     void Start()
     {
+        this.gameHandler = FindObjectOfType<GameHandler>();
         pressed = false;
         sr = gameObject.GetComponent(typeof(SpriteRenderer)) as SpriteRenderer;
     }

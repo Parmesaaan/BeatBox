@@ -59,7 +59,7 @@ void Start()
 
         if (pressable && button.isPressed())
         {
-            int points = (int)((2f - Mathf.Abs(transform.position.y)) * 10);
+            int points = (int)((2f - Mathf.Abs(transform.position.y)) * 100);
             gameHandler.HitNote(points);
             gameObject.SetActive(false);
         }

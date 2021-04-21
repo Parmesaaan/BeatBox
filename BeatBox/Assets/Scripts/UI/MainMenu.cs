@@ -4,7 +4,6 @@ using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
-    public AudioMixer audioMixer;
 
     public void PlayGame()
     {
@@ -21,16 +20,6 @@ public class MainMenu : MonoBehaviour
     {
         GameInfo gameInfo = FindObjectOfType<GameInfo>();
         gameInfo.SetDifficulty(difficulty);
-    }
-
-    public void SetVolumeMusic(float volume)
-    {
-        audioMixer.SetFloat("MusicVolumeParam", Mathf.Log10(volume) * 20f);
-    }
-
-    public void SetVolumeUI(float volume)
-    {
-        audioMixer.SetFloat("UIVolumeParam", Mathf.Log10(volume) * 20f);
     }
 
     public void SetLatencyModifier(float latencyModifier)
