@@ -11,11 +11,11 @@ You can play it here: https://parmesaaan.github.io/beatbox/
 * One song
 * Basic UI and menu
 * Controls screen (with difficulty selection, volume and controls etc)
+* Latency adjustment slider
+* More advanced score system (multipliers, combos)
 
 # To-do
-* Latency adjustment slider
 * Scene graphics rehaul (score, hit confirmation, buttons and beats, song backgrounds)
-* More advanced score system (multipliers, combos)
 * End screen after song (score, hiscores, highest combo)
 * Audio effects (count-in, hooray.mp3, menu song)
 * Health bar (or some mechanic to stop button mashing)
@@ -23,7 +23,6 @@ You can play it here: https://parmesaaan.github.io/beatbox/
 * More songs
 
 # Might do
-* More advanced note syncing
 * Beat sync backgrounds
 * Hiscores (local/online with accounts)
 * User level creation
