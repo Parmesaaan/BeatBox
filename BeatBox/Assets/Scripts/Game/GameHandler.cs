@@ -39,6 +39,8 @@ public class GameHandler : MonoBehaviour
 
     [Header("Game")]
     public AudioSource song;
+    public AudioSource winSound;
+    public AudioSource loseSound;
     public Difficulty difficulty = Difficulty.Easy;
     public float bpm;
     public float latencyModifier = 0.75f;
@@ -49,6 +51,7 @@ public class GameHandler : MonoBehaviour
     private float difficultyScale;
     public int notesGenerated;
     public int notesProcessed;
+    bool endSongPlayed;
 
     private int score;
     private int scoreOld;
@@ -80,6 +83,7 @@ public class GameHandler : MonoBehaviour
         }
 
         songStarted = false;
+        endSongPlayed = false;
         score = 0;
         scoreOld = 0;
         bps = bpm / 60f;
@@ -320,6 +324,21 @@ public class GameHandler : MonoBehaviour
 
     public void EndGame()
     {
+        started = false;
+        song.Pause();
+
+        if(!endSongPlayed)
+        {
+            if (healthSlider.value <= 0)
+            {
+                loseSound.Play();
+            }
+            else
+            {
+                winSound.Play();
+            }
+        }
+
         finalScoreTextEnd.SetText("Final Score: " + score);
         largestComboTextEnd.SetText("Largest Combo: " + largestCombo);
         if (notesMissed > 0)
@@ -333,7 +352,7 @@ public class GameHandler : MonoBehaviour
         {
             hitMissTextEnd.SetText("Hit/Miss: " + 0 + "/" + 0 + " | " + 0 + "%");
         }
-        gradeText.SetText("Grade: " + GetGradeEnd());
+        gradeTextEnd.SetText("Grade: " + GetGradeEnd());
         endGameCanvas.SetActive(true);
     }
 
