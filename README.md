@@ -15,9 +15,9 @@ You can play it here: https://parmesaaan.github.io/beatbox/
 * More advanced score system (multipliers, combos)
 * End screen after song (score, hiscores, highest combo)
 * Health bar
+* Audio effects (hooray.mp3, babycry.mp3 & menu song)
 
 # To-do
 * Scene graphics rehaul (score, hit confirmation, buttons and beats, song backgrounds)
-* Audio effects (count-in, hooray.mp3, menu song)
 * Menu screen redesign (current is placeholder)
 * More songs
