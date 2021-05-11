@@ -54,7 +54,7 @@ PrefabInstance:
     - target: {fileID: 146767919662627179, guid: 7635c911019281c4989d30a414627451, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e1426da13ef2b924c8a6a25336e16c3d, type: 3}
+      objectReference: {fileID: 21300000, guid: 240b2352211eed5458a24d59051ec79b, type: 3}
     - target: {fileID: 146767919662627189, guid: 7635c911019281c4989d30a414627451, type: 3}
       propertyPath: m_Name
       value: OrangeBeat

@@ -70,6 +70,10 @@ public class GameHandler : MonoBehaviour
     public bool songStarted;
     private bool setup;
 
+    public bool infiniteHealth = false;
+    public bool cantMiss = false;
+    public bool endGameLose = false;
+
     void Start()
     {
         this.gameInfo = FindObjectOfType<GameInfo>();
@@ -168,8 +172,6 @@ public class GameHandler : MonoBehaviour
                 pressAnyKey.gameObject.SetActive(false);
                 buttonControls.SetActive(false);
                 started = true;
-                //song.PlayDelayed(bps);
-
             }
         }
     }
@@ -228,17 +230,29 @@ public class GameHandler : MonoBehaviour
         {
             multiplier = 5;
         }
+
         score += points * multiplier;
         lastNoteTime = Time.time;
     }
 
     private void UpdateHealth(float amount)
     {
+        if(infiniteHealth)
+        {
+            return;
+        }
         healthSlider.value = healthSlider.value + amount;
     }
 
     public void MissedNote()
     {
+        if(cantMiss)
+        {
+            notesProcessed++;
+            notesHit++;
+            return;
+        }
+
         UpdateHealth(-2.0f);
         notesProcessed++;
         combo = 0;
@@ -327,9 +341,11 @@ public class GameHandler : MonoBehaviour
         started = false;
         song.Pause();
 
+        laneHandler.gameObject.SetActive(false);
+
         if(!endSongPlayed)
         {
-            if (healthSlider.value <= 0)
+            if (healthSlider.value <= 0 || endGameLose)
             {
                 loseSound.Play();
             }

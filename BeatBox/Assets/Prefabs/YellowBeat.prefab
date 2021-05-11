@@ -54,7 +54,7 @@ PrefabInstance:
     - target: {fileID: 146767919662627179, guid: 7635c911019281c4989d30a414627451, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1da56a7868ea2654eb031634d11bc205, type: 3}
+      objectReference: {fileID: 21300000, guid: 929b90ffb4c9344438a840c0b1fe8d96, type: 3}
     - target: {fileID: 146767919662627189, guid: 7635c911019281c4989d30a414627451, type: 3}
       propertyPath: m_Name
       value: YellowBeat
