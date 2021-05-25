@@ -18,6 +18,7 @@ You can play it here: https://parmesaaan.github.io/beatbox/
 * Audio effects (hooray.mp3, babycry.mp3 & menu song)
 
 # To-do
-* Scene graphics rehaul (score, hit confirmation, buttons and beats, song backgrounds)
-* Menu screen redesign (current is placeholder)
-* More songs
+* Scene graphics rehaul (hit confirmation, song backgrounds, end game screen)
+* Main menu and pause screen redesign (current are placeholders)
+* More songs & beatmaps
+* Custom song uploading
