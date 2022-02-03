@@ -2,9 +2,9 @@
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
 * text=auto
-Build/* linguist-vendored
-TemplateData/* linguist-vendored
-BeatBox/Assets/* linguist-vendored
+Build/* linguist-detectable=false
+TemplateData/* linguist-detectable=false
+BeatBox/Assets/* linguist-detectable=false
 ###############################################################################
 # Set default behavior for command prompt diff.
 #
