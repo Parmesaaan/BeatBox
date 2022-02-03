@@ -4,6 +4,7 @@
 * text=auto
 Build/* linguist-vendored
 TemplateData/* linguist-vendored
+BeatBox/Assets/* linguist-vendored
 ###############################################################################
 # Set default behavior for command prompt diff.
 #
