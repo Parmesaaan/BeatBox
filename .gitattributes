@@ -4,7 +4,7 @@
 * text=auto
 Build/* linguist-detectable=false
 TemplateData/* linguist-detectable=false
-BeatBox/Assets/*.* linguist-detectable=false
+BeatBox/Assets/* linguist-detectable=false
 ###############################################################################
 # Set default behavior for command prompt diff.
 #
