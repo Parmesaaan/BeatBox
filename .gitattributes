@@ -2,6 +2,8 @@
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
 * text=auto
+# Custom
+*.shader linguist-vendored=true
 Build/* linguist-detectable=false
 TemplateData/* linguist-detectable=false
 BeatBox/Assets/* linguist-detectable=false
